@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://brtyxhrva77nw"]
+
+[ext_resource type="Texture2D" uid="uid://d3bmbfngfdv2b" path="res://assets/space.jpg" id="1_0ghfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jl3r"]
+size = Vector2(1944.1, 1968.94)
+
+[node name="Space" type="Node2D"]
+
+[node name="SpaceSprite" type="Sprite2D" parent="."]
+position = Vector2(593, 483)
+scale = Vector2(0.483, 0.483)
+texture = ExtResource("1_0ghfe")
+
+[node name="SpaceArea" type="Area2D" parent="SpaceSprite"]
+position = Vector2(-1225.67, -987.578)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceSprite/SpaceArea"]
+position = Vector2(988.613, 986.542)
+shape = SubResource("RectangleShape2D_0jl3r")
