@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bokm714jbbg7n"]
+[gd_scene load_steps=5 format=3 uid="uid://bokm714jbbg7n"]
 
 [ext_resource type="Texture2D" uid="uid://boclp0r3weua6" path="res://assets/living-room.svg" id="1_4t8v1"]
+[ext_resource type="Script" uid="uid://65vq2mwpov1j" path="res://scripts/living_room.gd" id="1_a7140"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t8v1"]
 size = Vector2(148.947, 233.158)
@@ -10,6 +11,7 @@ radius = 26.8421
 height = 82.1053
 
 [node name="LivingRoom" type="Node2D"]
+script = ExtResource("1_a7140")
 
 [node name="LivingRoomSprite" type="Sprite2D" parent="."]
 position = Vector2(479, 480)
@@ -29,3 +31,7 @@ shape = SubResource("RectangleShape2D_4t8v1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LivingRoomSprite/FlowerVase"]
 position = Vector2(-67.3684, 68.9474)
 shape = SubResource("CapsuleShape2D_4t8v1")
+
+[connection signal="input_event" from="LivingRoomSprite/Window" to="." method="_on_spaceWindow_clicked"]
+[connection signal="mouse_entered" from="LivingRoomSprite/Window" to="." method="_on_spaceWindow_mouse_entered"]
+[connection signal="mouse_exited" from="LivingRoomSprite/Window" to="." method="_on_spaceWindow_mouse_exited"]
