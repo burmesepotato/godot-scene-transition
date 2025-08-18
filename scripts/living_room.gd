@@ -1,7 +1,6 @@
 extends Node2D
 
-#@onready var _transition_rect := $SceneTransitionRect
-@onready var _transition_rect : ColorRect = $Scene
+@onready var _transition_rect := $SceneTransitionRect
 
 func _on_spaceWindow_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("MouseLeftClick"):
