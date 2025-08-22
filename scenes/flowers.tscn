@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://km07haflep1e"]
+
+[ext_resource type="Texture2D" uid="uid://c8002f108kxv0" path="res://assets/flowers.svg" id="1_51en4"]
+[ext_resource type="Script" uid="uid://d3nkdtb76dbk" path="res://scripts/flowers.gd" id="1_p1flh"]
+[ext_resource type="PackedScene" uid="uid://duejuwnquekhy" path="res://scenes/transition_player.tscn" id="3_llf8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1flh"]
+
+[node name="Flowers" type="Node2D"]
+script = ExtResource("1_p1flh")
+
+[node name="Flowers" type="Sprite2D" parent="."]
+position = Vector2(468, 529)
+scale = Vector2(2.10993, 2.10993)
+texture = ExtResource("1_51en4")
+
+[node name="Flower" type="Area2D" parent="Flowers"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers/Flower"]
+position = Vector2(-5.21346, -40.2857)
+scale = Vector2(5.55129, 5.55129)
+shape = SubResource("CircleShape2D_p1flh")
+
+[node name="TransitionPlayer" parent="." instance=ExtResource("3_llf8o")]
+
+[connection signal="input_event" from="Flowers/Flower" to="." method="_on_flower_clicked"]
+[connection signal="mouse_entered" from="Flowers/Flower" to="." method="_on_flower_mouse_entered"]
+[connection signal="mouse_exited" from="Flowers/Flower" to="." method="_on_flower_mouse_exited"]
