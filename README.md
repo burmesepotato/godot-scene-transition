@@ -26,6 +26,3 @@ project.godot
 ```
 
 ---
-
-## 🟨 Status
-`in-progress 🦥 🦥 🦥`
